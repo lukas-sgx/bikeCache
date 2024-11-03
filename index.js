@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/login.html');
 });
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/static'));
 
 io.on('connection', (socket) => {
     console.log('a user connected');
