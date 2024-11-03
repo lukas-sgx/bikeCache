@@ -9,7 +9,7 @@ const host = 'localhost';
 const port = 8000;
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/login.html');
 });
 
 io.on('connection', (socket) => {
