@@ -4,18 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lks2007/bikeCache.git"
+    "url": "git+https://github.com/lukas-sgx/bikeCache.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lks2007/bikeCache/issues"
+    "url": "https://github.com/lukas-sgx/bikeCache/issues"
   },
-  "homepage": "https://github.com/lks2007/bikeCache#readme",
+  "homepage": "https://github.com/lukas-sgx/bikeCache#readme",
   "dependencies": {
     "express": "^4.21.1",
     "socket.io": "^4.7.2"
