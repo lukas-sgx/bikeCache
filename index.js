@@ -7,11 +7,13 @@ const io = new Server(server);
 
 const port = 8000;
 
+app.use(express.static(__dirname + '/static/'));
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/login.html');
 });
 
-app.use(express.static(__dirname + '/static/'));
+
 
 io.on('connection', (socket) => {
     console.log('a user connected');
