@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <form action="" method="post">
-        <h2>Login</h2>
-        <input type="text" class="username">
-        <input type="submit" value="Commencer">
-    </form>
+    <div class="container">
+        <form class="form" method="post" action="">
+            <p class="form-title">Login</p>
+            <div class="input-container">
+                <input type="text" placeholder="Username" name="username"><span></span>
+            </div>
+        <!-- <div class="input-container">
+            <input type="password" placeholder="Enter password">
+            </div> -->
+            <div class="input-container">
+                <select name="action" class="action">
+                    <option value="1">Chercheur</option>
+                    <option value="2">Caché</option>
+                </select><span></span>
+            </div>
+            <input type="submit" class="submit" value="Sign in" />
+        </form>
+    </div>
 </body>
 </html>
