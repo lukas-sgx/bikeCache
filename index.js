@@ -5,12 +5,13 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-const host = 'localhost';
 const port = 8000;
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/login.html');
 });
+
+app.use(express.static(__dirname + '/'));
 
 io.on('connection', (socket) => {
     console.log('a user connected');
