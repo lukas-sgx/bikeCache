@@ -23,13 +23,41 @@ html, body, #map {
     </style>
 </body>
 </html>
+<script src="/socket.io/socket.io.js"></script>
+<!-- <script src="/public/jquery-3.7.1.min.js"></script> -->
+<script>
+  var socket = io();
+
+  function getCookie(name) {
+        // Split cookie string and get all individual name=value pairs in an array
+        let cookieArr = document.cookie.split(";");
+    
+        // Loop through the array elements
+        for(let i = 0; i < cookieArr.length; i++) {
+            let cookiePair = cookieArr[i].split("=");
+    
+            /* Removing whitespace at the beginning of the cookie name
+            and compare it with the given string */
+            if(name == cookiePair[0].trim()) {
+                // Decode the cookie value and return
+                return decodeURIComponent(cookiePair[1]);
+            }
+        }
+    
+        // Return null if not found
+        return null;
+    }
+
+  let sessionId = getCookie("sessionId");
+  console.log(sessionId);
+</script>
 <script>
     var map = L.map('map').fitWorld().setView([43.46312540123568, 6.636119686000105], 13);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
+    L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3']
+}).addTo(map);
     
     var i=0;
     map.locate({setView: true, maxZoom: 19});
@@ -56,7 +84,7 @@ html, body, #map {
             newLatLng = new L.LatLng(lat, lng);
         }
 
-        console.log(e.latlng.lat)
+        // console.log(e.latlng.lat)
     }
     setInterval(() => {
         i=1;
